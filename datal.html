@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <meta charset="utf-8">
+  <title>Inicio/Registrar sesion</title>
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/semantic.min.js"></script>
+  </head>
+
+  <body>
+    <div class="ui container">
+      <div class="ui vertically divided grid">
+        <div class="three column row">
+          <div class="column">
+          </div>
+          <div class="column" id="roberto">
+            <form class="ui form" id="pene" method="post" >
+              <h4 class="ui dividing header">Formulario de Registro</h4>
+              <div class="field">
+                <label>Nombre</label>
+                <div class="field">
+                  <div class="field">
+                    <input type="text" name="nombre" placeholder="xxxxxxx">
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Correo electrónico</label>
+                <div class="field">
+                  <input type="text" name="correo" placeholder="xxxxxxxxxx@gmail.com">
+                </div>
+              </div>
+              <div class="field">
+              <label>Contraseña</label>
+              </div>
+              <div class="two fields">
+                <div class="field">
+                  <input type="password" name="contraseña" placeholder="Contraseña">
+                </div>
+                <div class="field">
+                  <input type="password" name="contraseña2" placeholder="Verificar Contraseña">
+                </div>
+              </div>
+              <div class="ui error message">
+              </div>
+              <div class="ui button submit" id="btn-enviar">Registrarse</div>
+              <div class="ui button submit" id="btn-login">Iniciar sesión</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function(){
+        $('#pene').form({
+            nombre : {
+              identifier:'nombre',
+              rules:[
+                {
+                  type: 'empty',
+                  prompt:'Por favor ingrese un nombre válido'
+                }
+                ]
+              },
+              correo: {
+                identifier:'correo',
+                rules:[{
+                  type:'email',
+                  prompt:'Ingrese un email válido'
+                }]
+              },
+              contraseña:{
+                identifier:'contraseña',
+                rules:[{
+                  type:'minLength[4]',
+                  prompt:'Su contraseña debe tener al menos 4 caracteres'
+                }]
+              },
+              contraseña2:{
+                identifier:'contraseña2',
+                rules:[{
+                  type:'match[contraseña]',
+                  prompt:'Las contraseñas no coinciden'
+                }]
+              }
+            },{
+              onSuccess:function(e){
+                e.preventDefault();
+                alert('enviando formulario');
+              }
+            });
+      });
+    </script>
+  </body>
+</html>
