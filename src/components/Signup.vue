@@ -12,7 +12,7 @@
         <div class="column" >
           <i class="massive steam square icon" id="icoc"></i>
           <form class="ui form" id="pene" method="post" >
-            <h4 class="ui dividing header">Connexion</h4>
+            <h4 class="ui dividing header">Inscription</h4>
             <div class="field">
               <label>Nom d'utilisateur</label>
               <div class="field">
@@ -41,7 +41,7 @@
             <div class="ui error message">
             </div>
             <div class="ui button submit" id="btn-enviar">S'inscrire</div>
-            <div class="ui button submit" id="btn-login">Se connecter</div>
+            <div class="ui button submit" id="btn-login" v-link="'login'">Déjà membre ?</div>
           </form>
         </div>
       </div>
@@ -82,7 +82,7 @@ $(function(){
           identifier:'contraseña2',
           rules:[{
             type:'match[contraseña]',
-            prompt:'La vérification MDP a échouée'
+            prompt:'La vérification du MDP a échouée'
           }]
         }
       },{

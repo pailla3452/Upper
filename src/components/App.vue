@@ -5,11 +5,11 @@
     <a class="active item">
       Accueil
     </a>
-    <a class="item">
-      Messages
+    <a class="item" v-link="'signup'">
+      Sing Up!
     </a>
-    <a class="item">
-      Amis
+    <a class="item" v-link="'login'">
+      Login
     </a>
     <button class="ui button"><i class="copy icon"></i></button>
     <div class="right menu">
@@ -19,7 +19,8 @@
           <i class="bug icon"></i>
         </div>
       </div>
-      <a class="ui item">
+      <a class="ui item" v-if="user.authenticated">
+        <i class="sign out icon"></i>
         Déconnexion
       </a>
     </div>
