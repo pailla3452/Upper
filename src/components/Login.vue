@@ -30,17 +30,13 @@
             <div class="field">
             <label>Mot de passe</label>
             </div>
-            <div class="two fields">
+            <div class="field">
               <div class="field">
                 <input type="password" name="contraseña" placeholder="Entrez votre MDP">
-              </div>
-              <div class="field">
-                <input type="password" name="contraseña2" placeholder="Vérifier le MDP">
               </div>
             </div>
             <div class="ui error message">
             </div>
-            <div class="ui button submit" id="btn-enviar">S'inscrire</div>
             <div class="ui button submit" id="btn-login">Se connecter</div>
           </form>
         </div>
@@ -76,13 +72,6 @@ $(function(){
           rules:[{
             type:'minLength[4]',
             prompt:'Le MDP doit contenir au moins 4 caractères'
-          }]
-        },
-        contraseña2:{
-          identifier:'contraseña2',
-          rules:[{
-            type:'match[contraseña]',
-            prompt:'La vérification MDP a échouée'
           }]
         }
       },{
