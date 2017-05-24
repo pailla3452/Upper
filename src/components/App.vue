@@ -3,24 +3,24 @@
   <div class="ui secondary  menu">
     <a class="item"><i class="steam icon"></i></a>
     <a class="active item">
-      Home
+      Accueil
     </a>
     <a class="item">
       Messages
     </a>
     <a class="item">
-      Friends
+      Amis
     </a>
     <button class="ui button"><i class="copy icon"></i></button>
     <div class="right menu">
       <div class="item">
         <div class="ui icon input">
-          <input type="text" placeholder="Search...">
+          <input type="text" placeholder="Rechercher...">
           <i class="bug icon"></i>
         </div>
       </div>
       <a class="ui item">
-        Logout
+        Déconnexion
       </a>
     </div>
   </div>
