@@ -1,7 +1,7 @@
 <template>
   <style>
     #icoc{margin-left: 100px; margin-bottom: 30px;}
-    body{background-image:url("https://www.walldevil.com/wallpapers/h12/web-background-wallpaper-copy1-templates-desktop-wallpapers-website.jpg") }
+    body{background-color:rgb(241,241,241);}
 
   </style>
   <div class="ui container" id="All">
