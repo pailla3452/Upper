@@ -1,7 +1,7 @@
 <template>
   <style>
     #icoc{margin-left: 100px; margin-bottom: 30px;}
-    body{background-image:url("https://www.walldevil.com/wallpapers/h12/web-background-wallpaper-copy1-templates-desktop-wallpapers-website.jpg") }
+    body{background-color:rgb(241,241,241);}
 
   </style>
   <div class="ui container" id="All">
@@ -60,7 +60,7 @@ $(function(){
         rules:[
           {
             type: 'empty',
-            prompt:'Por favor ingrese un nombre válido'
+            prompt:"Entrez un nom d'utilisateur valide"
           }
           ]
         },
@@ -68,27 +68,27 @@ $(function(){
           identifier:'correo',
           rules:[{
             type:'email',
-            prompt:'Ingrese un email válido'
+            prompt:'Entrez un e-mail valide'
           }]
         },
         contraseña:{
           identifier:'contraseña',
           rules:[{
             type:'minLength[4]',
-            prompt:'Su contraseña debe tener al menos 4 caracteres'
+            prompt:'Le MDP doit contenir au moins 4 caractères'
           }]
         },
         contraseña2:{
           identifier:'contraseña2',
           rules:[{
             type:'match[contraseña]',
-            prompt:'Las contraseñas no coinciden'
+            prompt:'La vérification MDP a échouée'
           }]
         }
       },{
         onSuccess:function(e){
           e.preventDefault();
-          alert('enviando formulario');
+          alert('Inscription envoyée');
         }
       });
 });
