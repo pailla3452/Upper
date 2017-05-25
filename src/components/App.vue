@@ -19,6 +19,7 @@
           <i class="bug icon"></i>
         </div>
       </div>
+      <!-- LOG OUT! -->
       <a class="ui item" v-if="user.authenticated">
         <i class="sign out icon"></i>
         Déconnexion
