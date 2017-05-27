@@ -16,13 +16,17 @@
       <div class="item">
         <div class="ui icon input">
           <input type="text" placeholder="Rechercher...">
-          <i class="bug icon"></i>
+          <i class="search icon"></i>
         </div>
       </div>
       <!-- LOG OUT! -->
       <a class="ui item" v-if="user.authenticated">
         <i class="sign out icon"></i>
         Déconnexion
+      </a>
+      <!-- PROFILE! -->
+      <a class="ui item">
+        <i class="large user icon"></i>
       </a>
     </div>
   </div>
