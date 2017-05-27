@@ -130,7 +130,7 @@ export default{
     }
   },
   methods:{
-    submit(){
+    /*submit(){
       var username = this.credentials.username,
       var email = this.credentials.email,
       var password = this.credentials.password
@@ -143,7 +143,7 @@ export default{
       else{
         //TODO
       }
-    }
+    }*/
   }
 }
 </script>
