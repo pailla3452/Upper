@@ -73,67 +73,46 @@
   </div>
 </template>
 
-<script>
+
 //If Error JQUERY
-$(function(){
-  $('#pene').form({
-      nombre : {
-        identifier:'nombre',
-        rules:[
-          {
-            type: 'empty',
-            prompt:"Entrez un nom d'utilisateur valide"
+<script type="text/javascript">
+  $(function(){
+    $('#pene').form({
+        nombre : {
+          identifier:'nombre',
+          rules:[
+            {
+              type: 'empty',
+              prompt:'Por favor ingrese un nombre válido'
+            }
+            ]
+          },
+          correo: {
+            identifier:'correo',
+            rules:[{
+              type:'email',
+              prompt:'Ingrese un email válido'
+            }]
+          },
+          contraseña:{
+            identifier:'contraseña',
+            rules:[{
+              type:'minLength[4]',
+              prompt:'Su contraseña debe tener al menos 4 caracteres'
+            }]
+          },
+          contraseña2:{
+            identifier:'contraseña2',
+            rules:[{
+              type:'match[contraseña]',
+              prompt:'Las contraseñas no coinciden'
+            }]
           }
-          ]
-        },
-        correo: {
-          identifier:'correo',
-          rules:[{
-            type:'email',
-            prompt:'Entrez un e-mail valide'
-          }]
-        },
-        contraseña:{
-          identifier:'contraseña',
-          rules:[{
-            type:'minLength[4]',
-            prompt:'Le MDP doit contenir au moins 4 caractères'
-          }]
-        },
-        contraseña2:{
-          identifier:'contraseña2',
-          rules:[{
-            type:'match[contraseña]',
-            prompt:'La vérification du MDP a échouée'
-          }]
-        }
-      },{
-        onSuccess:function(e){
-          e.preventDefault();
-          alert('Inscription envoyée');
-        }
-      });
-});
-//Base de datos VUE
-export default{
-  data() {
-    return {
-      credentials: {
-        email: '',
-        username: '',
-        password: ''
-      },
-      error: ''
-    }
-  },
-  methods:{
-    submit(){
-      var credentials = {
-        username: this.credentials.username,
-        email: this.credentials.email,
-        password: this.credentials.password
-      }
-    }
-  }
-}
+        },{
+          onSuccess:function(e){
+            e.preventDefault();
+            alert('enviando formulario');
+          }
+        });
+  });
 </script>
