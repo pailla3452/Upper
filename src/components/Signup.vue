@@ -13,42 +13,64 @@
           <i class="massive steam square icon" id="icoc"></i>
           <form class="ui form" id="pene" method="post" >
             <h4 class="ui dividing header">Inscription</h4>
+            <!-- USERNAME -->
             <div class="field">
               <label>Nom d'utilisateur</label>
               <div class="field">
                 <div class="field">
-                  <input type="text" name="nombre" placeholder="Entrez votre nom d'utilisateur">
+                  <input
+                  type="text"
+                  name="nombre"
+                  placeholder="Entrez votre nom d'utilisateur"
+                  v-model="credentials.username">
                 </div>
               </div>
             </div>
+            <!-- E-MAIL -->
             <div class="field">
               <label>Adresse e-mail</label>
               <div class="field">
-                <input type="text" name="correo" placeholder="Entrez votre adresse mail">
+                <input
+                type="text"
+                name="correo"
+                placeholder="Entrez votre adresse mail"
+                v-model="credentials.email"
+                >
               </div>
             </div>
+            <!-- PASSWORD -->
             <div class="field">
             <label>Mot de passe</label>
             </div>
             <div class="two fields">
               <div class="field">
-                <input type="password" name="contraseña" placeholder="Entrez votre MDP">
+                <input
+                type="password"
+                name="contraseña"
+                placeholder="Entrez votre MDP"
+                v-model="credentials.password">
               </div>
               <div class="field">
-                <input type="password" name="contraseña2" placeholder="Vérifier le MDP">
+                <input
+                type="password"
+                name="contraseña2"
+                placeholder="Vérifier le MDP"
+                v-model="credentials.Vpassword">
               </div>
             </div>
             <div class="ui error message">
             </div>
-            <div class="ui button submit" id="btn-enviar">S'inscrire</div>
+            <!-- SUBMIT -->
+            <div class="ui button submit" id="btn-enviar" @clcik="submit()">S'inscrire</div>
             <div class="ui button submit" id="btn-login" v-link="'login'">Déjà membre ?</div>
           </form>
         </div>
       </div>
     </div>
   </div>
+  <div>
+    <p>{{credentials.email}}</p>
   </div>
-</div>
 </template>
 
 <script>
@@ -93,5 +115,25 @@ $(function(){
       });
 });
 //Base de datos VUE
-
+export default{
+  data() {
+    return {
+      credentials: {
+        email: '',
+        username: '',
+        password: ''
+      },
+      error: ''
+    }
+  },
+  methods:{
+    submit(){
+      var credentials = {
+        username: this.credentials.username,
+        email: this.credentials.email,
+        password: this.credentials.password
+      }
+    }
+  }
+}
 </script>

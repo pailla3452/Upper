@@ -1,7 +1,7 @@
 <template>
   <style>
     #icoc{margin-left: 100px; margin-bottom: 30px;}
-    body{background-color:rgb(241,241,241);}
+    #All{background-color:rgb(241,241,241);}
 
   </style>
   <div class="ui container" id="All">

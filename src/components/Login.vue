@@ -13,31 +13,47 @@
           <i class="massive steam square icon" id="icoc"></i>
           <form class="ui form" id="pene" method="post" >
             <h4 class="ui dividing header">Connexion</h4>
+            <!-- NOM D'UTILISATEUR -->
             <div class="field">
               <label>Nom d'utilisateur</label>
               <div class="field">
                 <div class="field">
-                  <input type="text" name="nombre" placeholder="Entrez votre nom d'utilisateur">
+                  <input
+                  type="text"
+                  name="nombre"
+                  placeholder="Entrez votre nom d'utilisateur"
+                  v-model="crendentials.username">
                 </div>
               </div>
             </div>
+            <!-- E-MAIL -->
             <div class="field">
               <label>Adresse e-mail</label>
               <div class="field">
-                <input type="text" name="correo" placeholder="Entrez votre adresse mail">
+                <input
+                type="text"
+                name="correo"
+                placeholder="Entrez votre adresse mail"
+                v-model="credentials.email">
               </div>
             </div>
+            <!-- PASSWORD -->
             <div class="field">
             <label>Mot de passe</label>
             </div>
             <div class="field">
               <div class="field">
-                <input type="password" name="contraseña" placeholder="Entrez votre MDP">
+                <input
+                type="text"
+                name="contraseña"
+                placeholder="Entrez votre MDP"
+                v-model="crendentials.password">
               </div>
             </div>
             <div class="ui error message">
             </div>
-            <div class="ui button submit" id="btn-login">Se connecter</div>
+            <!-- SUBMIT -->
+            <div class="ui button submit" id="btn-login" @click="submit()">Se connecter</div>
           </form>
         </div>
       </div>
@@ -45,6 +61,7 @@
   </div>
   </div>
 </div>
+<h1>HOLIIII</h1>
 </template>
 
 <script>
@@ -82,5 +99,29 @@ $(function(){
       });
 });
 //Base de datos VUE
-
+import auth from '../auth'
+export default {
+  data (){
+    return{
+      credentials : {
+        username:'',
+        email:'',
+        password:'',
+        response:''
+      },
+      error:''
+    }
+  },
+  methods: {
+    submit(){
+      var credentials = {
+        username:this.credentials.username,
+        email:this.credentials.email,
+        password:this.credentials.password
+      }
+      //function(object, credentials, redirect)
+      //auth.login(this, credentials, 'home')
+    }
+  }
+}
 </script>

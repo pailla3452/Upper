@@ -2,7 +2,7 @@
 <template>
   <div class="ui secondary  menu">
     <a class="item"><i class="steam icon"></i></a>
-    <a class="active item">
+    <a class="active item" v-link="'home'">
       Accueil
     </a>
     <a class="item" v-link="'signup'">
@@ -19,6 +19,7 @@
           <i class="bug icon"></i>
         </div>
       </div>
+      <!-- LOG OUT! -->
       <a class="ui item" v-if="user.authenticated">
         <i class="sign out icon"></i>
         Déconnexion
