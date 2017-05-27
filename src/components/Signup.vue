@@ -68,6 +68,7 @@
       </div>
     </div>
   </div>
+
   <div>
     <p>{{credentials.email}}</p>
   </div>
@@ -143,9 +144,9 @@ export default{
       else{
         //TODO
       }
-    }*/
-
     }
+
+  }*/
   }
 }
 </script>

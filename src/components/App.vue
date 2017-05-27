@@ -26,8 +26,11 @@
       </a>
       <!-- PROFILE! -->
       <a class="ui item">
-        <i class="large user icon"></i>
+        <i class="large user icon">
+
+        </i>
       </a>
+
     </div>
   </div>
   <div class="container">
