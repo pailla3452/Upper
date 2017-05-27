@@ -113,6 +113,37 @@
             e.preventDefault();
             alert('enviando formulario');
           }
+
         });
   });
+
+//Base de datos VUE
+export default{
+  data() {
+    return {
+      credentials: {
+        email: '',
+        username: '',
+        password: ''
+      },
+      error: ''
+    }
+  },
+  methods:{
+    submit(){
+      var username = this.credentials.username,
+      var email = this.credentials.email,
+      var password = this.credentials.password
+      var miss = auth.signup(username, email, password)
+      //DATA SUBMITTED
+      if(!miss){
+        //TODO
+      }
+      // ERROR
+      else{
+        //TODO
+      }
+    }
+  }
+}
 </script>
