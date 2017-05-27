@@ -3,7 +3,7 @@ function Login(email, password)
   this.email = email;
   this.password = password;
 
-  var baseDatos = PouchDB('http://localhost:5986/loggeos');
+  var baseDatos = PouchDB('http://localhost:5984/loggeos');
 
   var credentials = new Object();
 

@@ -99,7 +99,7 @@ $(function(){
       });
 });
 //Base de datos VUE
-import auth from '../auth'
+import auth from '../pouchdb'
 export default {
   data (){
     return{

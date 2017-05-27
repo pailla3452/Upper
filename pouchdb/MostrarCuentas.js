@@ -1,3 +1,6 @@
+//Ce code es
+
+/*var baseDatos = new PouchDB('http://localhost:5984/loggeos');
 
 baseDatos.allDocs(
 {
@@ -11,3 +14,4 @@ baseDatos.allDocs(
 {
   console.log(err);
 });
+*/

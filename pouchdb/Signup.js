@@ -4,7 +4,7 @@ function Signup(name, email, password)
  this.email = email;
  this.password = password;
 
-  var baseDatos = PouchDB('http://localhost:5986/loggeos');
+  var baseDatos = PouchDB('http://localhost:5984/loggeos');
 
   var credentials = new Object();
 
@@ -15,7 +15,7 @@ function Signup(name, email, password)
 
   return baseDatos.get(credentials.email).then(function(doc) {
 
-    return doc._id;
+    return "registred";
 
   }).catch(function (err)
   {
@@ -30,44 +30,11 @@ function Signup(name, email, password)
       }
 
       // Guardar el archivo JSON creado
-      baseDatos.put(doc);
+      //baseDatos.put(doc);
+
+      return "not registred";
 
       console.log(err);
       }
   });
-
-
-
-
-
-
-  // Buscar por el correo electronico
-  /*baseDatos.get(credentials.email).then(function (doc)
-  {
-    // Cuando se encuentre el archivo
-    console.log( 'El correo ya está registrado');
-
-    return
-  }).catch (function (err)
-  {
-  if (err.error == "not_found")
-  {
-    // Cuando no se encuentre, se creara el documento que almacenara toda la informacion del que se quiere registrar
-    var doc =
-    {
-      "_id": credentials.email,
-      "name": credentials.name,
-      "password": credentials.password
-    }
-
-    // Guardar el archivo JSON creado
-    baseDatos.put(doc);
-
-    console.log(err);
-
-
-    }
-  });*/
-
-
 }

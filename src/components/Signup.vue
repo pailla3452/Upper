@@ -118,6 +118,9 @@
   });
 
 //Base de datos VUE
+
+import puchdb from '../pouchdb'
+
 export default{
   data() {
     return {
@@ -129,19 +132,32 @@ export default{
       error: ''
     }
   },
-  methods:{
-    submit(){
-      var username = this.credentials.username,
-      var email = this.credentials.email,
-      var password = this.credentials.password
-      var miss = auth.signup(username, email, password)
-      //DATA SUBMITTED
-      if(!miss){
-        //TODO
-      }
-      // ERROR
-      else{
-        //TODO
+  methods:
+  {
+    submit()
+    {
+      var username = this.credentials.username;
+      var email = this.credentials.email;
+      var password = this.credentials.password;
+      var miss = puchdb.signup(username, email, password);
+
+      setTimeout(function()
+      {
+        miss.then(function(result)
+        {
+          if(result != "errors")
+          {
+            //Se acaba de registrar
+            alert("Bienvenido :D")
+          }
+          // ERROR
+          else
+          {
+            //Ya esta registrado
+            alert("Correo ya en uso")
+          }
+        })
+      }, 1000)
       }
     }
   }
