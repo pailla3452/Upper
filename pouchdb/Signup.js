@@ -13,9 +13,9 @@ function Signup(name, email, password)
   credentials.password = this.password;
 
 
-  return baseDatos.get(credentials.email).then(function(doc) {
+  return baseDatos.get(credentials.email).then(function(doc){
 
-    return doc._id;
+    return 'Ya hay una cuenta';
 
   }).catch(function (err)
   {

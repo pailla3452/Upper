@@ -9,5 +9,5 @@ var signup = Signup("Prueba", "correo", "contrasena");
 
 setTimeout(function()
 {
-    console.log(signup);
+    console.log(signup.resolve());
 }, 1000);
