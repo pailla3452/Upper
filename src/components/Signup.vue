@@ -68,8 +68,9 @@
       </div>
     </div>
   </div>
+  <div>
+    <p>{{credentials.email}}</p>
   </div>
-</div>
 </template>
 
 <script>
@@ -115,13 +116,15 @@ $(function(){
 });
 //Base de datos VUE
 export default{
-  data(){
-    credentials: {
-      username:''
-      email:''
-      password:''
-    },
-    error:''
+  data() {
+    return {
+      credentials: {
+        email: '',
+        username: '',
+        password: ''
+      },
+      error: ''
+    }
   },
   methods:{
     submit(){
