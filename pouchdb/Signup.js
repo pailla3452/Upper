@@ -13,7 +13,7 @@ function Signup(name, email, password)
   credentials.password = this.password;
 
 
-  return baseDatos.get(credentials.email).then(function(doc) {
+  return baseDatos.get(credentials.email).then(function(doc){
 
     return "registred";
 

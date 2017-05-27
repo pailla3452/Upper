@@ -9,6 +9,7 @@ var signup = Signup("Prueba", "polla", "contrasena");
 
 setTimeout(function()
 {
+<<<<<<< HEAD
   signup.then(function(result)
   {
     console.log(result);
