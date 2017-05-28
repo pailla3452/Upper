@@ -5,25 +5,25 @@
   console.log(info);
 });*/
 
-var signup = Signup("Prueba", "polla", "contrasena");
+var kek = Login("correo", "sg<fg");
 
-setTimeout(function()
+setTimeout(function() {
+console.log(kek);
+
+kek.then(function(result)
 {
-<<<<<<< HEAD
-  signup.then(function(result)
-  {
-    console.log(result);
+  console.log(result);
 
-    if(result != "registred")
-    {
-      //Se acaba de registrar
-      alert("Bienvenido :D")
-    }
-    // ERROR
-    else
-    {
-      //Ya esta registrado
-      alert("Correo ya en uso")
-    }
+  if(result != "accepted")
+  {
+    //Se acaba de registrar
+    console.log("Bienvenido :D")
+  }
+  // ERROR
+  else
+  {
+    //Ya esta registrado
+    console.log("Correo ya en uso")
+  }
   })
 }, 1000)

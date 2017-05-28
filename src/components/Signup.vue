@@ -119,8 +119,6 @@
 
 //Base de datos VUE
 
-import puchdb from '../pouchdb'
-
 export default{
   data() {
     return {
@@ -134,32 +132,26 @@ export default{
   },
   methods:
   {
-    submit()
-    {
+    submit() {
       var username = this.credentials.username;
       var email = this.credentials.email;
       var password = this.credentials.password;
-      var miss = puchdb.signup(username, email, password);
+      //var miss = pouchdb.signup(username, email, password);
 
-      setTimeout(function()
-      {
-        miss.then(function(result)
-        {
-          if(result != "errors")
-          {
+      /*setTimeout(function() {
+        miss.then(function(result) {
+          if(result != "errors") {
             //Se acaba de registrar
             alert("Bienvenido :D")
           }
           // ERROR
-          else
-          {
+          else{
             //Ya esta registrado
             alert("Correo ya en uso")
           }
         })
-      }, 1000)
+      }, 1000)*/
       }
     }
-  }
 }
 </script>

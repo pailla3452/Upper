@@ -99,7 +99,6 @@ $(function(){
       });
 });
 //Base de datos VUE
-import auth from '../pouchdb'
 export default {
   data (){
     return{
@@ -120,8 +119,19 @@ export default {
         password:this.credentials.password
       }
       //function(object, credentials, redirect)
-      //auth.login(this, credentials, 'home')
-    }
+      var miss = auth.login(email, password)
+
+      setTimeout(function() {
+        miss.then(fuction(result) {
+          if(result == "accepted") {
+            console.log("Credenciales correctos");
+          }
+          else {
+            console.log("Credenciales incorrectos");
+          }
+      })
+    }, 1000)
+  }
   }
 }
 </script>

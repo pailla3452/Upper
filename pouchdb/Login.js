@@ -10,24 +10,25 @@ function Login(email, password)
   credentials.email = this.email;
   credentials.password = this.password;
 
-  baseDatos.get(credentials.email).then(function (doc)
+  return baseDatos.get(credentials.email).then(function (doc)
   {
     // Cuando se encuentre, se tiene que comprobar si la contrasena y el correo coinciden con los datos de la base de datos
     if (credentials.password == doc.password)
     {
-      console.log('Las contraseñas coinciden :D');
+      // Las contrasenas coinciden
+      return "accepted";
     }
     else
     {
-      console.log('Las contraseñas no coinciden :(');
+      return "incorrect password";
     }
 
   }).catch (function (err)
   {
     if (err.error == "not_found")
     {
-      // Cuando no se encuentre
-      console.log("Esta cuenta de correo no existe");
+      // Cuando no se encuentre el correo
+     return "incorrect or something idk";
     }
   })
 }
