@@ -55,19 +55,20 @@
                 type="password"
                 name="contraseña2"
                 placeholder="Vérifier le MDP"
-                v-model="credentials.Vpassword">
+                v-model="credentials.password2">
               </div>
             </div>
             <div class="ui error message">
             </div>
             <!-- SUBMIT -->
-            <div class="ui button submit" id="btn-enviar" @clcik="submit()">S'inscrire</div>
+            <div class="ui button submit" id="btn-enviar" @click="submit()">S'inscrire</div>
             <div class="ui button submit" id="btn-login" v-link="'login'">Déjà membre ?</div>
           </form>
         </div>
       </div>
     </div>
   </div>
+
   <div>
     <p>{{credentials.email}}</p>
   </div>
@@ -111,7 +112,7 @@
         },{
           onSuccess:function(e){
             e.preventDefault();
-            alert('enviando formulario');
+            console.log('Formulaire envoyé :)');
           }
 
         });
@@ -125,33 +126,70 @@ export default{
       credentials: {
         email: '',
         username: '',
-        password: ''
+        password: '',
+        password2: ''
       },
       error: ''
     }
   },
-  methods:
-  {
-    submit() {
+  methods:{
+    submit(){
       var username = this.credentials.username;
       var email = this.credentials.email;
       var password = this.credentials.password;
-      //var miss = pouchdb.signup(username, email, password);
+      var password2 = this.credentials.password2;
 
-      /*setTimeout(function() {
-        miss.then(function(result) {
-          if(result != "errors") {
-            //Se acaba de registrar
-            alert("Bienvenido :D")
-          }
-          // ERROR
-          else{
-            //Ya esta registrado
-            alert("Correo ya en uso")
-          }
-        })
-      }, 1000)*/
+      //Voir si tout est rempli
+      if (!username || !email || !password || !password2){
+        alert('SVP, remplisez tous les informations nécessaires.');
+        return;
       }
+
+      console.log("Username: " + username + " Email: " + email + " Contraseña: " + password);
+
+      // Voir si les deux mots de passe ont la longuer minimun
+      if (password.length < 4 || password2.length < 4){
+        alert('SVP, les mots de passes doivent avoir plus de 4 caractères');
+        return;
+      }
+
+      // Voir si les deux mots de passe sont la même
+      if (password != password2){
+        alert('Les mts de passe ne coïncident pas.');
+        return;
+      }
+
+      // Si tout va bien jusqu'à ici, on prendra la bd
+
+       var baseDonnes = PouchDB('http://localhost:5984/loggeos');
+
+       // Cherche un fichier dans la db qui ait l'_id du courrier
+       // car il peut avoir qu'une compte par courrier
+      baseDonnes.get(email).then(function(doc){
+
+        alert('Ce courrier est déjà registré.');
+
+       }).catch(function (err)
+       {
+         if (err.error == "not_found")
+         {
+           // Si le fichier n'est pas trouvé pas l'_id du courrier, un nouveau document
+           // (compte) sera créé
+
+           var doc =
+           {
+             "_id": email,
+             "name": username,
+             "password": password
+           }
+
+           // Sauvegarde le fichier créé avant
+           baseDonnes.put(doc);
+
+           console.log(err);
+           }
+       });
     }
+  }
 }
 </script>

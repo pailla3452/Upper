@@ -22,7 +22,7 @@
                   type="text"
                   name="nombre"
                   placeholder="Entrez votre nom d'utilisateur"
-                  v-model="crendentials.username">
+                  v-model="credentials.username">
                 </div>
               </div>
             </div>
@@ -39,17 +39,16 @@
             </div>
             <!-- PASSWORD -->
             <div class="field">
-            <label>Mot de passe</label>
-            </div>
-            <div class="field">
+              <label>Mot de passe</label>
               <div class="field">
-                <input
-                type="text"
-                name="contraseña"
-                placeholder="Entrez votre MDP"
-                v-model="crendentials.password">
+                <div class="field">
+                  <input
+                  type="text"
+                  name="MDP"
+                  placeholder="Entrez votre mot de passe"
+                  v-model="credentials.password">
+                </div>
               </div>
-            </div>
             <div class="ui error message">
             </div>
             <!-- SUBMIT -->
@@ -61,7 +60,6 @@
   </div>
   </div>
 </div>
-<h1>HOLIIII</h1>
 </template>
 
 <script>
@@ -100,38 +98,50 @@ $(function(){
 });
 //Base de datos VUE
 export default {
-  data (){
+  data() {
     return{
       credentials : {
-        username:'',
-        email:'',
-        password:'',
-        response:''
+        username: '',
+        email: '',
+        password: ''
       },
       error:''
     }
   },
   methods: {
     submit(){
-      var credentials = {
-        username:this.credentials.username,
-        email:this.credentials.email,
-        password:this.credentials.password
-      }
-      //function(object, credentials, redirect)
-      var miss = auth.login(email, password)
+      var username = this.credentials.username;
+      var email = this.credentials.email;
+      var password = this.credentials.password;
 
-      setTimeout(function() {
-        miss.then(fuction(result) {
-          if(result == "accepted") {
-            console.log("Credenciales correctos");
-          }
-          else {
-            console.log("Credenciales incorrectos");
-          }
-      })
-    }, 1000)
-  }
+      // Voir si tout est rempli
+      if (!username || !email || !password){
+        alert('SVP, remplisez tous les informations nécessaires.');
+        return;
+      }
+
+      console.log("Username: " + username + " email: " + email + " password: " + password);
+
+      // Voir si le mot de passe a le minimun
+      if (password.length < 4){
+        alert('SVP, remplisez tous les informations nécessaires.');
+        return;
+      }
+
+      var baseDonnes = PouchDB('http://localhost:5984/loggeos');
+
+      baseDonnes.get(email).then(function(doc){
+      // Si le fichier avec l'_id du courrier
+
+
+       }).catch(function (err)
+       {
+         if (err.error == "not_found")
+         {
+
+         }
+       });
+    }
   }
 }
 </script>
