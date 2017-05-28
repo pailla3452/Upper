@@ -61,7 +61,6 @@
   </div>
   </div>
 </div>
-<h1>HOLIIII</h1>
 </template>
 
 <script>
