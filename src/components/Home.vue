@@ -20,18 +20,18 @@
                 <img src="http://tienda.canalocio.es/27201-201289-thickbox/the-witcher-3-wild-hunt-edicion-premium-day-1-ps4.jpg">
               </div>
               <div class="content">
-                <a class="header">Kristy</a>
+                <a class="header">The Witcher 3: Wild Hunt</a>
                 <div class="meta">
-                  <span class="date">Joined in 2013</span>
+                  <span class="date">19 mayo 2015</span>
                 </div>
                 <div class="description">
-                  Kristy is an art director living in New York.
+                  Etiquetas: Mundo abierto, rol
                 </div>
               </div>
               <div class="extra content">
                 <a>
                   <i class="user icon"></i>
-                  22 Friends
+                  Comentarios
                 </a>
               </div>
             </div>
