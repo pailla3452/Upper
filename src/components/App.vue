@@ -1,6 +1,10 @@
 <!-- src/components/App.vue -->
 <template>
-  <div class="ui secondary  menu">
+  <style>
+    #culo{background-color: rgb(250,250,250);}
+    #imagensteam{overflow: auto;;}
+  </style>
+  <div class="ui secondary  menu" id="culo">
     <a class="item" v-link="'home'"><i class="large home icon"></i></a>
     <a class="item" v-link="'signup'">
       Sing Up!
@@ -8,7 +12,7 @@
     <a class="item" v-link="'login'">
       Login
     </a>
-    <button class="ui button"><i class="copy icon"></i></button>
+    <button class="ui button" id="imagensteam"><i class="steam icon"></i></button>
     <div class="right menu">
       <div class="item">
         <div class="ui icon input">
@@ -22,14 +26,14 @@
         Déconnexion
       </a>
       <!-- PROFILE! -->
-      <a class="ui item">
+      <a class="ui item" v-link="'profile'">
         <i class="large user icon">
-
         </i>
       </a>
 
     </div>
     <!-- EXPERIMENT -->
+  <!--
     <div class="ui teal buttons">
       <div class="ui button">Toggle</div>
       <div class="ui floating dropdown icon button">
@@ -37,11 +41,12 @@
         <div class="menu">
           <div class="item" data-value="drop">Drop</div>
           <div class="item" data-value="horizontal flip">Horizontal Flip</div>
-          <div class="item" data-value="fade up">Fade Up</div>
+          <d iv class="item" data-value="fade up">Fade Up</div>
           <div class="item" data-value="scale">Scale</div>
         </div>
       </div>
     </div>
+  -->
   </div>
   <div class="container">
     <router-view></router-view>

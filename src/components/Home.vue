@@ -1,10 +1,8 @@
 <template>
   <style>
-    #polla{background-color: green;}
-    #caca{background-color: yellow;}
-    #mierda{background-color: pink}
+    #pie{background-image: url("https://images4.alphacoders.com/557/thumb-1920-557539.jpg");}
   </style>
-  <div class="ui grid">
+  <div class="ui grid" id="pie">
   <div class="sixteen wide column"></div>
   <div class="five wide column">
     <h1>Filtros</h1>
@@ -32,6 +30,7 @@
                 <a>
                   <i class="user icon"></i>
                   Comentarios
+                  <button class="ui button">Comprar</button>
                 </a>
               </div>
             </div>
