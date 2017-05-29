@@ -62,7 +62,7 @@
             </div>
             <!-- SUBMIT -->
             <div class="ui button submit" id="btn-enviar" @click="submit()">S'inscrire</div>
-            <div class="ui button submit" id="btn-login" v-link="'login'">Déjà membre ?</div>
+            <div class="ui button submit" id="btn-login" v-link="'login'">Déjà membre?</div>
           </form>
         </div>
       </div>
