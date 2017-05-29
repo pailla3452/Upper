@@ -155,7 +155,7 @@ export default{
 
       // Voir si les deux mots de passe sont la même
       if (password != password2){
-        alert('Les mts de passe ne coïncident pas.');
+        alert('Les mots de passe ne coïncident pas.');
         return;
       }
 
@@ -182,12 +182,13 @@ export default{
              "password": password,
              "jeu_un": "null",
              "jeu_deu": "null",
-             "jeu_trois": "null"
+             "jeu_trois": "null",
+             "tout_jeu": ""
            }
-           // Sauvegarde le fichier créé avant
-           baseDonnes.put(doc);
-           //TODO Go Home + Keep Alive
-           router.redirect('/')
+          // Sauvegarde le fichier créé avant
+          baseDonnes.put(doc);
+           //TODO redigir y keep alive para que siga conectado IGNGACIO
+           
            }
        });
     }

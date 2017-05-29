@@ -124,7 +124,7 @@ export default {
 
       // Voir si le mot de passe a le minimun
       if (password.length < 4){
-        alert('SVP, remplisez tous les informations nécessaires.');
+        alert("SVP, le mot de passe n'est assez longue.");
         return;
       }
 
@@ -133,9 +133,9 @@ export default {
       baseDonnes.get(email).then(function(doc){
 
       if (doc._id == email && doc.name == username && doc.password == password){
-        console.log("Il a réussi à se connecter");
+        console.log("Il a réussi à se connecter :)");
 
-        // Redirigir a home ya loggeado
+        //TODO Redirigir a home ya loggeado y keep alive
       }
       else{
         alert("Le nom d'utilisateur, email ou mot de passe ne coïncident pas.");
@@ -145,7 +145,7 @@ export default {
        {
          if (err.error == "not_found")
          {
-           alert("Le courrier n'est pas régistré.")
+           alert("Le courrier n'est pas régistré.");
          }
        });
     }
