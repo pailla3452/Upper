@@ -180,13 +180,14 @@ export default{
            {
              "_id": email,
              "name": username,
-             "password": password
+             "password": password,
+             "jeu_un": "null",
+             "jeu_deu": "null",
+             "jeu_trois": "null"
            }
 
            // Sauvegarde le fichier créé avant
            baseDonnes.put(doc);
-
-           console.log(err);
            }
        });
     }

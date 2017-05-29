@@ -23,8 +23,11 @@
       </a>
       <!-- PROFILE! -->
       <a class="ui item">
-        <i class="large user icon"></i>
+        <i class="large user icon">
+
+        </i>
       </a>
+
     </div>
     <!-- EXPERIMENT -->
     <div class="ui teal buttons">

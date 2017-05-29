@@ -1,84 +1,64 @@
+import {router} from '../index'
+
+const API_URL = 'http://localhost:3001/'
+const LOGIN_URL = API_URL + 'sessions/create/'
+const SIGNUP_URL = API_URL + 'users/'
+
 export default {
 
   user: {
     authenticated: false
   },
-  Login(email, password){
-    this.email = email;
-    this.password = password;
 
-    var baseDatos = PouchDB('http://localhost:5984/loggeos');
+  login(context, creds, redirect) {
+    context.$http.post(LOGIN_URL, creds, (data) => {
+      localStorage.setItem('id_token', data.id_token)
 
-    var credentials = new Object();
+      this.user.authenticated = true
 
-    credentials.email = this.email;
-    credentials.password = this.password;
-
-    baseDatos.get(credentials.email).then(function (doc)
-    {
-      // Cuando se encuentre, se tiene que comprobar si la contrasena y el correo coinciden con los datos de la base de datos
-      if (credentials.password == doc.password)
-      {
-        console.log('Las contraseñas coinciden :D');
-
-
-      }
-      else
-      {
-        console.log('Las contraseñas no coinciden :(');
-
-
+      if(redirect) {
+        router.go(redirect)
       }
 
-    }).catch (function (err)
-    {
-      if (err.error == "not_found")
-      {
-        // Cuando no se encuentre
-        console.log("Esta cuenta de correo no existe");
-
-
-      }
+    }).error((err) => {
+      context.error = err
     })
   },
 
-  Signup(name, email, password){
-   this.name = name;
-   this.email = email;
-   this.password = password;
+  signup(context, creds, redirect) {
+    context.$http.post(SIGNUP_URL, creds, (data) => {
+      localStorage.setItem('id_token', data.id_token)
 
-    var baseDatos = PouchDB('http://localhost:5986/loggeos');
+      this.user.authenticated = true
 
-    var credentials = new Object();
+      if(redirect) {
+        router.go(redirect)
+      }
 
-    credentials.name = this.name;
-    credentials.email = this.email;
-    credentials.password = this.password;
+    }).error((err) => {
+      context.error = err
+    })
+  },
+
+  logout() {
+    localStorage.removeItem('id_token')
+    this.user.authenticated = false
+  },
+
+  checkAuth() {
+    var jwt = localStorage.getItem('id_token')
+    if(jwt) {
+      this.user.authenticated = true
+    }
+    else {
+      this.user.authenticated = false
+    }
+  },
 
 
-    return baseDatos.get(credentials.email).then(function(doc) {
-
-      return "registred";
-
-    }).catch(function (err)
-    {
-      if (err.error == "not_found")
-      {
-        // Cuando no se encuentre, se creara el documento que almacenara toda la informacion del que se quiere registrar
-        var doc =
-        {
-          "_id": credentials.email,
-          "name": credentials.name,
-          "password": credentials.password
-        }
-
-        // Guardar el archivo JSON creado
-        baseDatos.put(doc);
-
-        return "not registred";
-
-        console.log(err);
-        }
-    });
+  getAuthHeader() {
+    return {
+      'Authorization': 'Bearer ' + localStorage.getItem('id_token')
+    }
   }
 }

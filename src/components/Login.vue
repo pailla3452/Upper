@@ -131,14 +131,21 @@ export default {
       var baseDonnes = PouchDB('http://localhost:5984/loggeos');
 
       baseDonnes.get(email).then(function(doc){
-      // Si le fichier avec l'_id du courrier
 
+      if (doc._id == email && doc.name == username && doc.password == password){
+        console.log("Il a réussi à se connecter");
+
+        // Redirigir a home ya loggeado
+      }
+      else{
+        alert("Le nom d'utilisateur, email ou mot de passe ne coïncident pas.");
+      }
 
        }).catch(function (err)
        {
          if (err.error == "not_found")
          {
-
+           alert("Le courrier n'est pas régistré.")
          }
        });
     }
