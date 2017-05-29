@@ -175,7 +175,6 @@ export default{
          {
            // Si le fichier n'est pas trouvé pas l'_id du courrier, un nouveau document
            // (compte) sera créé
-
            var doc =
            {
              "_id": email,
@@ -185,9 +184,10 @@ export default{
              "jeu_deu": "null",
              "jeu_trois": "null"
            }
-
            // Sauvegarde le fichier créé avant
            baseDonnes.put(doc);
+           //TODO Go Home + Keep Alive
+           router.redirect('/')
            }
        });
     }

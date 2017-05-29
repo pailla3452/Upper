@@ -7,7 +7,7 @@
     <!-- PARTIE GAUCHE-->
     <div class="ui secondary  menu">
       <!-- HOME -->
-      <a class="item" v-link="'home'"><i class="large home icon"></i></a>
+      <a class="item" v-link="'/'"><i class="large home icon"></i></a>
       <!-- Signup-->
       <a class="item" v-link="'signup'">
         Sing Up!

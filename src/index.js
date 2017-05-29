@@ -8,10 +8,12 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 Vue.use(VueRouter)
 
-export var router = new VueRouter()
+export var router = new VueRouter({
+  mode:'history'
+})
 
 router.map({
-  '/home': {
+  '/': {
     component: Home
   },
   '/login': {
@@ -23,7 +25,7 @@ router.map({
 })
 
 router.redirect({
-  '*': '/home'
+  '*': '/'
 })
 
 router.start(App, '#app')
