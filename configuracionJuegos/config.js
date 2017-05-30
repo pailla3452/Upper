@@ -1,4 +1,4 @@
-var bd = PouchDB('http://localhost:5984/loggeos');
+var bd = new PouchDB('http://localhost:5984/jeux');
 
 // Esto sirve solamente para almacenar los juegos con la informacion necesaria para las tarjetas
 
@@ -9,7 +9,7 @@ var withcher =
   "image": "http://tienda.canalocio.es/27201-201289-thickbox/the-witcher-3-wild-hunt-edicion-premium-day-1-ps4.jpg",
   "description": "Etiquetas: Mundo abierto, rol",
   "price": "$34.99",
-  "comments": null //Ver como hacerlo
+  "comments": null
 }
 
 var unchar =
@@ -19,7 +19,7 @@ var unchar =
   "image": "http://www.unchartedthegame.com/wp/wp-content/uploads/2015/04/UC4_PS4_JEWELCASE_STRAIGHT_ANGLE_001.png",
   "description": "Etiquetas: Aventura, hardcore",
   "price": "$41.99",
-  "comments": null //Ver como hacerlo
+  "comments": null
 }
 
 var _last =
@@ -29,7 +29,7 @@ var _last =
   "image": "https://media.playstation.com/is/image/SCEA/the-last-of-us-remastered-two-column-01-ps4-us-28jul14?$TwoColumn_Image$",
   "description": "Etiquetas: Aventura, rol, plataformas",
   "price": "$45.99",
-  "comments": null //Ver como hacerlo
+  "comments": null
 }
 
 var mc =
@@ -39,7 +39,7 @@ var mc =
   "image": "http://6images.cgames.de/images/idgwpgsgp/bdb/2359472/600x.jpg",
   "description": "Etiquetas: Mundo abierto, rol",
   "price": "$34.99",
-  "comments": null //Ver como hacerlo
+  "comments": null
 }
 
 bd.put(withcher);

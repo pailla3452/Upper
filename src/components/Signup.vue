@@ -158,9 +158,8 @@ export default{
         alert('Les mots de passe ne coïncident pas.');
         return;
       }
-      console.log("aqui esta la funcion")
 
-      //Fonction
+      //Fonction pour créer une nouvelle comptes
       auth.signup(username, email, password, '/')
     }
   }

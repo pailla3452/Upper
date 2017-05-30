@@ -34,7 +34,8 @@ export default {
          }
         // Sauvegarde le fichier créé avant
         baseDonnes.put(doc);
-         //redigir y keep alive para que siga conectado IGNGACIO
+
+         //TODO redigir y keep alive para que siga conectado IGNGACIO
          this.user.authenticated = true;
          this.user.theseEmail = email;
          console.log('adentro index.js!')

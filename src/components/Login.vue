@@ -133,15 +133,9 @@ export default {
         alert("SVP, le mot de passe n'est assez longue.");
         return;
       }
+
       auth.login(username, email, password, '/');
     }
   }
 }
 </script>
-<style scoped>
-
-  #icoc{margin-left: 100px; margin-bottom: 30px;}
-  body{background-image:url("http://2.bp.blogspot.com/-vz5mXrKt5Hg/UDnBBRO0RUI/AAAAAAAAIrE/7hRy41jIRmc/s1600/1.jpeg");}
-
-
-</style>
