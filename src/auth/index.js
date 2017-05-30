@@ -2,7 +2,7 @@ import {router} from '../index'
 
 export default {
   user: {
-    theseName: '',
+    theseEmail: '',
     authenticated: false
   },
   signup(username, email, password, redirect){
@@ -48,7 +48,7 @@ export default {
       // Ir a la pagina solicitada
       router.go(redirect);
       this.username.authenticated = true;
-      this.username.theseName = username;
+      this.username.theseEmail = email;
     }
     else{
       alert("Le nom d'utilisateur, email ou mot de passe ne coïncident pas.");
