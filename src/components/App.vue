@@ -57,7 +57,7 @@
     <div class="container">
       <router-view></router-view>
     </div>
-
+<!-- El davbar inferior -->
 <div class="ui inverted vertical footer segment">
   <div class="ui center aligned container">
     <div class="ui stackable inverted grid">
@@ -86,7 +86,7 @@
       </div>
     </div>
     <div class="ui inverted section divider"></div>
-    <img src="https://c.slashgear.com/wp-content/uploads/2017/02/steam-games.jpg" class="ui centered ini image" height="42" width="62">
+    
     <div class="ui horizontal inverted small divided link list">
       <a class="item" href="http://localhost:8080/#!/" target="_self">© 2017 Upper Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en Suiza y España.
                                                                       Todos los precios incluyen IVA (donde sea aplicable).
