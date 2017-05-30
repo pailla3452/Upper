@@ -6,6 +6,7 @@ export default {
     authenticated: false
   },
   signup(username, email, password, redirect){
+
     // Si tout va bien jusqu'à ici, on prendra la bd
      var baseDonnes = PouchDB('http://localhost:5984/loggeos');
 
@@ -33,11 +34,12 @@ export default {
          }
         // Sauvegarde le fichier créé avant
         baseDonnes.put(doc);
-         //TODO redigir y keep alive para que siga conectado IGNGACIO
 
-         //this.user.authenticated = true;
-         //this.user.theseEmail = email;
-         //console.log(this.user.authenticated);
+         //TODO redigir y keep alive para que siga conectado IGNGACIO
+         this.user.authenticated = true;
+         this.user.theseEmail = email;
+         console.log('adentro index.js!')
+         console.log(this.user.authenticated)
          router.go(redirect);
          }
      });
@@ -67,6 +69,7 @@ export default {
      });
   },
   logout(){
+    console.log('El usuario de desconecto...')
     this.user.theseName = username;
     this.user.authenticated = false;
     router.go('/login');

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <h1>{{game}}</h1>
     <p> Price: {{price}}<p>
@@ -8,7 +8,7 @@
     <p>{{description}}</p>
     <hr>
     <h1>Comments: </h1>
-    <comment-usr :gameName="game"></comment-usr>
+    <comment-usr :gameName='game'></comment-usr>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   },
   created(){
     //TODO Llamar base de datos
-    this.game = $route.params.theGame;
+    this.game = 'The Witcher 3: Wild Hunt';
     this.price = gameinDB[this.game].price;
     this.linkImage = gameinDB[this.game].linkImage;
     this.description = gameinDB[this.game].description;
@@ -41,5 +41,5 @@ var gameinDB = {'The Witcher 3: Wild Hunt': {linkImage:'http://tienda.canalocio.
 
 </script>
 
-<style lang="css">
+<style >
 </style>

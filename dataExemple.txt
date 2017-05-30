@@ -26,3 +26,7 @@
   price: '$59.99',
   comments:'Juego para ninos rata'
 }
+
+
+
+https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/394360/71924a3dae0d30451e509210ec104928b3d96ded.jpg

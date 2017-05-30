@@ -69,10 +69,6 @@
         </div>
       </div>
     </div>
-
-    <div>
-      <p>{{credentials.email}}</p>
-    </div>
   </div>
 </template>
 
@@ -137,6 +133,7 @@ export default{
   },
   methods:{
     submit(){
+      console.log('lololo')
       var username = this.credentials.username;
       var email = this.credentials.email;
       var password = this.credentials.password;
@@ -161,7 +158,7 @@ export default{
         alert('Les mots de passe ne coïncident pas.');
         return;
       }
-
+      
       //Fonction pour créer une nouvelle compte
       auth.signup(username, email, password, '/')
     }
