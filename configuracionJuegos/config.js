@@ -9,7 +9,12 @@ var withcher =
   "image": "http://tienda.canalocio.es/27201-201289-thickbox/the-witcher-3-wild-hunt-edicion-premium-day-1-ps4.jpg",
   "description": "Etiquetas: Mundo abierto, rol",
   "price": "$34.99",
-  "comments": null
+  "comments": {
+    {'danie': "feofokef"},
+    {'danie': "feofokef"},
+    {'danie': "feofokef"},
+    {'danie': "feofokef"}
+  }
 }
 
 var unchar =
