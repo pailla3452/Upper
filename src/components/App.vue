@@ -17,9 +17,9 @@
       </a>
 
       <!-- PARTIE DROITE-->
-      <!-- SEARCH -->
       <div class="right menu">
-        <div class="item">
+        <!-- SEARCH -->
+        <div class="item" v-if="user.authenticated">
           <div class="ui icon input">
             <input type="text" placeholder="Rechercher...">
             <i class="search icon"></i>
@@ -63,10 +63,16 @@
 
 
 <script>
+import auth from '../auth'
 
 export default {
-  methods:{
-    logout(){
+  data() {
+    return {
+      user: auth.user
+    }
+  },
+  methods: {
+    logout() {
       auth.logout()
     }
   }
