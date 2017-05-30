@@ -1,9 +1,12 @@
-<template>
-  <style>
-    #icoc{margin-left: 100px; margin-bottom: 30px;}
-    body{background-color:rgb(241,241,241);}
 
-  </style>
+
+<style>
+  #icoc{margin-left: 100px; margin-bottom: 30px;}
+  body{background-image:url("http://2.bp.blogspot.com/-vz5mXrKt5Hg/UDnBBRO0RUI/AAAAAAAAIrE/7hRy41jIRmc/s1600/1.jpeg");}
+</style>
+
+<template>
+
   <div class="ui container" id="All">
     <div class="ui vertically divided grid">
       <div class="three column row">
@@ -133,7 +136,10 @@ export default {
   }
 }
 </script>
-
 <style scoped>
+
+  #icoc{margin-left: 100px; margin-bottom: 30px;}
+  body{background-image:url("http://2.bp.blogspot.com/-vz5mXrKt5Hg/UDnBBRO0RUI/AAAAAAAAIrE/7hRy41jIRmc/s1600/1.jpeg");}
+
 
 </style>
