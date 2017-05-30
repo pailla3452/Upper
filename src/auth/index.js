@@ -34,7 +34,10 @@ export default {
         // Sauvegarde le fichier créé avant
         baseDonnes.put(doc);
          //TODO redigir y keep alive para que siga conectado IGNGACIO
-         login(username, email, password, '/')
+         this.username.authenticated = true;
+         this.username.theseEmail = email;
+         console.log(this.username.authenticated)
+         router.go(redirect);
          }
      });
   },
@@ -46,9 +49,9 @@ export default {
     if (doc._id == email && doc.name == username && doc.password == password){
       //TODO Redirigir a home ya loggeado y keep alive
       // Ir a la pagina solicitada
-      router.go(redirect);
       this.username.authenticated = true;
       this.username.theseEmail = email;
+      router.go(redirect);
     }
     else{
       alert("Le nom d'utilisateur, email ou mot de passe ne coïncident pas.");
@@ -65,6 +68,7 @@ export default {
   logout(){
     this.user.theseName = username;
     this.user.authenticated = false;
+    router.go('/login');
   }
 
 }
