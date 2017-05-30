@@ -5,7 +5,7 @@
   <!-- Comment con variables-->
   <div class="comment">
     <a class="avatar">
-      <img src="https://semantic-ui.com/images/avatar/small/elliot.jpg">
+      <img src="http://orig14.deviantart.net/d940/f/2011/011/8/e/super_mario_avatar_by_665almostevil-d36y2l7.gif">
     </a>
     <div class="content">
       <a class="author">Matt</a>
@@ -95,7 +95,7 @@ export default {
   },
   methods:{
     /*TODO Tienes que subirlo a la base de datos
-    / jeux[nombre del juego].comments
+    / jeux[gameName].comments
     /Tienes que subir un object en la forma {'user':'lo que dijo'}
     */
     submit(){

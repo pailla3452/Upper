@@ -1,6 +1,6 @@
 <template>
   <div >
-     ARRAY DES JEUX ICI
+     <!-- ARRAY DES JEUX ICI -->
     <div class="ui link cards" >
       <div v-for="jeu in jeux">
         <jeu-card :game="jeu"></jeu-card>

@@ -19,14 +19,16 @@
         {{comments}}
         </a>
         <!-- Buy Button -->
+        <a v-link="'gamePage'">
         <div class="right floated">
-          <div class="ui animated fade button" tabindex="0" v-link="'gamePage'">
+          <div class="ui animated fade button" tabindex="0">
           <div class="visible content">Buy!</div>
             <div class="hidden content">
               {{price}}
             </div>
           </div>
         </div>
+      </a>
       </div>
     </div>
   </div>
