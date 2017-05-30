@@ -99,7 +99,23 @@ export default {
     /Tienes que subir un object en la forma {'user':'lo que dijo'}
     */
     submit(){
-      
+      var baseDonnes = PouchDB('http://localhost:5984/jeux');
+
+      var username = "daniel";
+
+      var comentario = "hola";
+
+      console.log("hola");
+
+      baseDonnes.get(gameName).then(function(doc)
+      {
+        doc[username] = comentario;
+
+        alert('Commentaire actualisé correctement');
+
+        return baseDonnes.put(doc);
+      });
+
     }
   }
 }
