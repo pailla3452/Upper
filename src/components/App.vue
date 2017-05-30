@@ -26,7 +26,7 @@
           </div>
         </div>
         <!-- LOG OUT! -->
-        <a class="ui item">
+        <a class="ui item" @click="logout()">
           <i class="sign out icon"></i>
           Déconnexion
         </a>
@@ -58,6 +58,7 @@
     </div>
 
     <!-- Bas de page-->
+    <div class="">
     <div class="ui inverted vertical footer segment">
    <div class="ui container">
      <div class="ui stackable inverted divided equal height stackable grid">
@@ -85,11 +86,19 @@
        </div>
      </div>
    </div>
- </div>
   </div>
+  </div>
+</div>
 </template>
 
 
 <script>
 
+export default {
+  methods:{
+    logout(){
+      auth.logout()
+    }
+  }
+}
 </script>

@@ -141,6 +141,7 @@ export default{
       var email = this.credentials.email;
       var password = this.credentials.password;
       var password2 = this.credentials.password2;
+      console.log(username, email, password2, password)
 
       //Voir si tout est rempli
       if (!username || !email || !password || !password2){
