@@ -93,6 +93,12 @@
         </a>
       </div>
     </div>
+    <div class="ui inverted section divider"></div>
+
+    <div class="ui horizontal inverted small divided link list">
+      <a class="item" href="http://localhost:8080/#!/" target="_self">© 2017 Upper Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en Suiza y España.
+      </a>
+    </div>
   </div>
 </div>
 </template>
