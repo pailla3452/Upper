@@ -34,9 +34,10 @@ export default {
         // Sauvegarde le fichier créé avant
         baseDonnes.put(doc);
          //TODO redigir y keep alive para que siga conectado IGNGACIO
-         this.username.authenticated = true;
-         this.username.theseEmail = email;
-         console.log(this.username.authenticated)
+
+         //this.user.authenticated = true;
+         //this.user.theseEmail = email;
+         //console.log(this.user.authenticated);
          router.go(redirect);
          }
      });

@@ -128,6 +128,7 @@ export default {
         alert("SVP, le mot de passe n'est assez longue.");
         return;
       }
+      
       auth.login(username, email, password, '/');
     }
   }
