@@ -69,10 +69,6 @@
         </div>
       </div>
     </div>
-
-    <div>
-      <p>{{credentials.email}}</p>
-    </div>
   </div>
 </template>
 
@@ -137,6 +133,7 @@ export default{
   },
   methods:{
     submit(){
+      console.log('lololo')
       var username = this.credentials.username;
       var email = this.credentials.email;
       var password = this.credentials.password;
@@ -161,52 +158,8 @@ export default{
         alert('Les mots de passe ne coïncident pas.');
         return;
       }
-      // Si tout va bien jusqu'à ici, on prendra la bd
-
-       var baseDonnes = PouchDB('http://localhost:5984/loggeos');
-
-       // Cherche un fichier dans la db qui ait l'_id du courrier
-       // car il peut avoir qu'une compte par courrier
-      baseDonnes.get(email).then(function(doc){
-
-        alert('Ce courrier est déjà registré.');
-
-       }).catch(function (err)
-       {
-         if (err.error == "not_found")
-         {
-           // Si le fichier n'est pas trouvé pas l'_id du courrier, un nouveau document
-           // (compte) sera créé
-
-           /*_id c'est l'identificateur avec lequel on cherchera dans la base des donnes le fichier
-           name est le nom d'utilisateur
-           password est le mot de passe
-           jeu_un jusqu'à trois sont les trois derniers jeux que l'utilisateur
-           a ajouté a fav.
-           tout_jeu est un string qui va garder tous les jeux que l'utilisateur
-           a ajouté a fav.
-           bio c'est la biographie de l'utilisateur
-           */
-           var doc =
-           {
-             "_id": email,
-             "name": username,
-             "password": password,
-             "jeu_un": "null",
-             "jeu_deu": "null",
-             "jeu_trois": "null",
-             "tout_jeu": "",
-             "bio": ""
-           }
-
-          // Sauvegarde le fichier créé avant
-          baseDonnes.put(doc);
-
-           //TODO redigir y keep alive para que siga conectado IGNGACIO
-
-           }
-       });
-       
+      console.log("aqui esta la funcion")
+      
       //Fonction
       auth.signup(username, email, password, '/')
     }
