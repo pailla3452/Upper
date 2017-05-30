@@ -1,10 +1,11 @@
 import {router} from '../index'
 
 export default {
-  user: {
+   user: {
     theseEmail: '',
     authenticated: false
   },
+  
   signup(username, email, password, redirect){
 
     // Si tout va bien jusqu'à ici, on prendra la bd
@@ -35,10 +36,10 @@ export default {
         // Sauvegarde le fichier créé avant
         baseDonnes.put(doc);
          //redigir y keep alive para que siga conectado IGNGACIO
-         this.user.authenticated = true;
-         this.user.theseEmail = email;
-         console.log('adentro index.js!')
-         console.log(this.user.authenticated)
+         //this.user.authenticated = true;
+         //this.user.theseEmail = email;
+         //console.log('adentro index.js!')
+         //console.log(this.user.authenticated)
          router.go(redirect);
          }
      });

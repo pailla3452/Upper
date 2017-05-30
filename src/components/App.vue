@@ -57,43 +57,43 @@
     <div class="container">
       <router-view></router-view>
     </div>
-<!-- El davbar inferior -->
-<div class="ui inverted vertical footer segment">
-  <div class="ui center aligned container">
-    <div class="ui stackable inverted grid">
-      <div class="three wide column">
-        <h4 class="ui inverted header">Acerca de Upper</h4>
-        <div class="ui inverted link list">
-          <a class="item" href="#">Acerca de Upper</a>
-          <a class="item" href="#">Upperworks</a>
-          <a class="item" href="#">Empleo</a>
-          <a class="item" href="#">Distribucion de Upper</a>
+  <!-- El davbar inferior -->
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Acerca de Upper</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="#">Acerca de Upper</a>
+            <a class="item" href="#">Upperworks</a>
+            <a class="item" href="#">Empleo</a>
+            <a class="item" href="#">Distribucion de Upper</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Upper-contactos</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="#">Tarjetas de regalos</a>
+            <a class="item" href="#">facebook</a>
+            <a class="item" href="#">Upper-games</a>
+            <a class="item" href="#">Reembolsos</a>
+          </div>
+        </div>
+        <div class="seven wide right floated column">
+          <h4 class="ui inverted teal header">Politica de privacidad</h4>
+          <p>Support for the continued development of Upper comes directly from the community</p>
+          <button type="submit" class="ui large teal button">Donate Today</button>
         </div>
       </div>
-      <div class="three wide column">
-        <h4 class="ui inverted header">Upper-contactos</h4>
-        <div class="ui inverted link list">
-          <a class="item" href="#">Tarjetas de regalos</a>
-          <a class="item" href="#">facebook</a>
-          <a class="item" href="#">Upper-games</a>
-          <a class="item" href="#">Reembolsos</a>
-        </div>
+      <div class="ui inverted section divider"></div>
+
+      <div class="ui horizontal inverted small divided link list">
+        <a class="item" href="http://localhost:8080/#!/" target="_self">© 2017 Upper Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en Suiza y España.
+                                                                        Todos los precios incluyen IVA (donde sea aplicable).
+        </a>
       </div>
-      <div class="seven wide right floated column">
-        <h4 class="ui inverted teal header">Politica de privacidad</h4>
-        <p>Support for the continued development of Upper comes directly from the community</p>
-        <button type="submit" class="ui large teal button">Donate Today</button>
-      </div>
-    </div>
-    <div class="ui inverted section divider"></div>
-    
-    <div class="ui horizontal inverted small divided link list">
-      <a class="item" href="http://localhost:8080/#!/" target="_self">© 2017 Upper Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en Suiza y España.
-                                                                      Todos los precios incluyen IVA (donde sea aplicable).
-      </a>
     </div>
   </div>
-</div>
 </div>
 </template>
 

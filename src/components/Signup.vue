@@ -159,7 +159,7 @@ export default{
         return;
       }
       console.log("aqui esta la funcion")
-      
+
       //Fonction
       auth.signup(username, email, password, '/')
     }
