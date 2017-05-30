@@ -12,8 +12,12 @@ import Publicate from './components/compP/Publicate.vue'
 import Commentusr from './components/compP/Commentusr.vue'
 import GamesFollowed from './components/compP/GamesFollowed.vue'
 
-Vue.use(VueResource)
-Vue.use(VueRouter)
+import auth from './auth'
+
+Vue.use(VueResource);
+Vue.use(VueRouter);
+
+export var router = new VueRouter()
 
 // COMPONENTS
 // Pour les fiches des jeux: <jeu-card></jeu-card>
@@ -46,7 +50,7 @@ router.map({
   'profile':{
     component: Profile
   },
-  'gamePage':{
+  '/gamePage':{
     component: GamePage
   },
   //Not found ---> Home

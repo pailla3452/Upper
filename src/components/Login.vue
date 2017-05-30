@@ -97,6 +97,7 @@ $(function(){
       });
 });
 //Base de datos VUE
+import auth from '../auth'
 export default {
   data() {
     return{
@@ -127,27 +128,7 @@ export default {
         alert("SVP, le mot de passe n'est assez longue.");
         return;
       }
-
-      var baseDonnes = PouchDB('http://localhost:5984/loggeos');
-
-      baseDonnes.get(email).then(function(doc){
-
-      if (doc._id == email && doc.name == username && doc.password == password){
-        console.log("Il a réussi à se connecter :)");
-
-        //TODO Redirigir a home ya loggeado y keep alive
-      }
-      else{
-        alert("Le nom d'utilisateur, email ou mot de passe ne coïncident pas.");
-      }
-
-       }).catch(function (err)
-       {
-         if (err.error == "not_found")
-         {
-           alert("Le courrier n'est pas régistré.");
-         }
-       });
+      auth.login(username, email, password, '/');
     }
   }
 }

@@ -121,6 +121,7 @@
   });
 
 //Base de datos VUE
+import auth from '../auth'
 
 export default{
   data() {
@@ -148,7 +149,6 @@ export default{
       }
 
       console.log("Username: " + username + " Email: " + email + " Contraseña: " + password);
-
       // Voir si les deux mots de passe ont la longuer minimun
       if (password.length < 4 || password2.length < 4){
         alert('SVP, les mots de passes doivent avoir plus de 4 caractères');
@@ -160,40 +160,8 @@ export default{
         alert('Les mots de passe ne coïncident pas.');
         return;
       }
-
-      // Si tout va bien jusqu'à ici, on prendra la bd
-
-       var baseDonnes = PouchDB('http://localhost:5984/loggeos');
-
-       // Cherche un fichier dans la db qui ait l'_id du courrier
-       // car il peut avoir qu'une compte par courrier
-      baseDonnes.get(email).then(function(doc){
-
-        alert('Ce courrier est déjà registré.');
-
-       }).catch(function (err)
-       {
-         if (err.error == "not_found")
-         {
-           // Si le fichier n'est pas trouvé pas l'_id du courrier, un nouveau document
-           // (compte) sera créé
-           var doc =
-           {
-             "_id": email,
-             "name": username,
-             "password": password,
-             "jeu_un": "null",
-             "jeu_deu": "null",
-             "jeu_trois": "null",
-             "tout_jeu": ""
-           }
-          // Sauvegarde le fichier créé avant
-          baseDonnes.put(doc);
-           //TODO redigir y keep alive para que siga conectado IGNGACIO
-           Vue.use(VueRouter)
-           router.redirect('/')
-           }
-       });
+      //Fonction
+      auth.signup(username, email, password, '/')
     }
   }
 }
