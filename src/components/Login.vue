@@ -1,18 +1,20 @@
-
-
-<style>
-  #icoc{margin-left: 100px; margin-bottom: 30px;}
-  body{background-image:url("http://2.bp.blogspot.com/-vz5mXrKt5Hg/UDnBBRO0RUI/AAAAAAAAIrE/7hRy41jIRmc/s1600/1.jpeg");}
-</style>
-
+<!--   body{background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4qJLEtbIS-9F7t9-2evE7_tr4GqfhVpr3A7d7TjJPkL20q_dzUQ");}-->
 <template>
+  <style>
 
-  <div class="ui container" id="All">
+    #All{
+        padding-bottom:10px;
+        }
+    #icoc{margin-left: 100px; margin-bottom: 30px;}
+
+  </style>
+
+  <div class="ui container">
     <div class="ui vertically divided grid">
       <div class="three column row">
         <div class="column">
         </div>
-        <div class="column" >
+        <div class="column" id="All"  >
           <i class="massive steam square icon" id="icoc"></i>
           <form class="ui form" id="pene" method="post" >
             <h4 class="ui dividing header">Connexion</h4>

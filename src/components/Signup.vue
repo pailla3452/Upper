@@ -2,7 +2,7 @@
   <div>
     <style>
       #icoc{margin-left: 100px; margin-bottom: 30px;}
-      body{background-color:rgb(241,241,241);}
+      body{background-image: url("http://2.bp.blogspot.com/-vz5mXrKt5Hg/UDnBBRO0RUI/AAAAAAAAIrE/7hRy41jIRmc/s1600/1.jpeg");}
 
     </style>
     <div class="ui container" id="All">
@@ -10,7 +10,7 @@
         <div class="three column row">
           <div class="column">
           </div>
-          <div class="column" >
+          <div class="column">
             <i class="massive steam square icon" id="icoc"></i>
             <form class="ui form" id="pene" method="post" >
               <h4 class="ui dividing header">Inscription</h4>
@@ -159,7 +159,7 @@ export default{
         return;
       }
       console.log("aqui esta la funcion")
-      
+
       //Fonction
       auth.signup(username, email, password, '/')
     }
