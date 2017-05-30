@@ -176,6 +176,15 @@ export default{
            // Si le fichier n'est pas trouvé pas l'_id du courrier, un nouveau document
            // (compte) sera créé
 
+           /*_id c'est l'identificateur avec lequel on cherchera dans la base des donnes le fichier
+           name est le nom d'utilisateur
+           password est le mot de passe
+           jeu_un jusqu'à trois sont les trois derniers jeux que l'utilisateur
+           a ajouté a fav.
+           tout_jeu est un string qui va garder tous les jeux que l'utilisateur
+           a ajouté a fav.
+           bio c'est la biographie de l'utilisateur
+           */
            var doc =
            {
              "_id": email,
@@ -184,7 +193,8 @@ export default{
              "jeu_un": "null",
              "jeu_deu": "null",
              "jeu_trois": "null",
-             "tout_jeu": ""
+             "tout_jeu": "",
+             "bio": ""
            }
 
           // Sauvegarde le fichier créé avant
