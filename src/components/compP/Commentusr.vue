@@ -99,7 +99,6 @@ export default {
     /Tienes que subir un object en la forma {'user':'lo que dijo'}
     */
     submit(){
-
     }
   }
 }

@@ -68,6 +68,14 @@ export default{
     else{
       this.comments = "There is no comments yet!";
     }*/
+
+        var baseDonnes = PouchDB('http://localhost:5984/loggeos');
+
+        var doc = baseDonnes.get('tout_les_jeux');
+
+        console.log(doc.jeux);
+
+    //for (var i = 0; i < )
   }
 }
 var games = { 'The Witcher 3: Wild Hunt': {linkImage:'http://tienda.canalocio.es/27201-201289-thickbox/the-witcher-3-wild-hunt-edicion-premium-day-1-ps4.jpg',
@@ -81,7 +89,7 @@ var games = { 'The Witcher 3: Wild Hunt': {linkImage:'http://tienda.canalocio.es
   price: '$45.99',
   comments:'El segundo mejor juego de la puta historia'},'Minecraft': {linkImage:'http://6images.cgames.de/images/idgwpgsgp/bdb/2359472/600x.jpg',
   description: 'Etiquetas: Mundo abierto, rol',
-  price: '$59.99',
+  price: '$34.99',
   comments:'Juego para ninos rata'}
 }
 
