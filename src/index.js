@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
 import App from './components/App.vue'
 import Home from './components/Home.vue'
 import Signup from './components/Signup.vue'
@@ -14,7 +13,6 @@ import GamesFollowed from './components/compP/GamesFollowed.vue'
 
 import auth from './auth'
 
-Vue.use(VueResource);
 Vue.use(VueRouter);
 
 export var router = new VueRouter()

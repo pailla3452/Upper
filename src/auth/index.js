@@ -1,22 +1,21 @@
 import {router} from '../index'
 
 export default {
-   user: {
-    theseEmail: '',
-    authenticated: false
+  user:{
+    authenticated:false
   },
-
   signup(username, email, password, redirect){
-
+    var exito = false;
+    //console.log(this.user.authenticated )
     // Si tout va bien jusqu'à ici, on prendra la bd
-     var baseDonnes = PouchDB('http://localhost:5984/loggeos');
+    var baseDonnes = PouchDB('http://localhost:5984/loggeos');
 
      // Cherche un fichier dans la db qui ait l'_id du courrier
      // car il peut avoir qu'une compte par courrier
-    baseDonnes.get(email).then(function(doc){
+    var stat = baseDonnes.get(email).then(function(doc){
 
       alert('Ce courrier est déjà registré.');
-
+      return false;
      }).catch(function (err)
      {
        if (err.error == "not_found")
@@ -35,26 +34,35 @@ export default {
          }
         // Sauvegarde le fichier créé avant
         baseDonnes.put(doc);
-
-         //TODO redigir y keep alive para que siga conectado IGNGACIO
-         this.user.authenticated = true;
-         this.user.theseEmail = email;
-         console.log('adentro index.js!')
-         console.log(this.user.authenticated)
-         router.go(redirect);
+        router.go(redirect);
+        return true;
          }
      });
+     // TODO HACER QUE FUNCIONE EL LOGIN. AHORA DEVUELVE SOLO TRUE
+     // HAY UN PROBLEMA CON EL TIEMPO. ESTA PARTE LA PONE AL FINAL
+    setTimeout(function()
+    {
+      console.log(stat);
+      stat.then(function(result)
+    {
+      console.log(result);
+    })
+    }, 300)
+
+    this.user.authenticated = true;
+    console.log("existe? -->");
+    console.log(this.user);
+    console.log("lo ha cambiado? -->");
+    console.log(this.user.authenticated);
   },
   login(username, email, password, redirect){
     var baseDonnes = PouchDB('http://localhost:5984/loggeos');
 
-    baseDonnes.get(email).then(function(doc){
+    var stat = baseDonnes.get(email).then(function(doc){
 
     if (doc._id == email && doc.name == username && doc.password == password){
       //TODO Redirigir a home ya loggeado y keep alive
       // Ir a la pagina solicitada
-      this.username.authenticated = true;
-      this.username.theseEmail = email;
       router.go(redirect);
     }
     else{
@@ -68,14 +76,16 @@ export default {
          alert("Le courrier n'est pas régistré.");
        }
      });
+
+     //TODO MISMO PROBLEMA QUE EL SINGUP
+     this.user.authenticated = true;
   },
   logout(){
     console.log('El usuario de desconecto...')
-    this.user.theseName = username;
+    this.user.theseEmail = '';
     this.user.authenticated = false;
     router.go('/login');
   }
-
 }
 
 

@@ -9,11 +9,11 @@
       <!-- HOME -->
       <a class="item" v-link="'/'"><i class="large home icon"></i></a>
       <!-- Signup-->
-      <a class="item" v-link="'signup'">
+      <a class="item" v-link="'signup'" v-if="!user.authenticated">
         Sing Up!
       </a>
       <!-- Login-->
-      <a class="item" v-link="'login'">
+      <a class="item" v-link="'login'" v-if="!user.authenticated">
         Login
       </a>
 
@@ -27,12 +27,12 @@
           </div>
         </div>
         <!-- LOG OUT! -->
-        <a class="ui item" @click="logout()">
+        <a class="ui item" @click="logout()" v-if="user.authenticated">
           <i class="sign out icon"></i>
           Déconnexion
         </a>
         <!-- PROFILE! -->
-        <a class="ui item" v-link="'profile'">
+        <a class="ui item" v-link="'profile'" v-if="user.authenticated">
           <i class="large user icon">
 
           </i>
