@@ -1,7 +1,9 @@
-<!--   body{background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4qJLEtbIS-9F7t9-2evE7_tr4GqfhVpr3A7d7TjJPkL20q_dzUQ");}-->
+
 <template>
   <style>
+    body{background-image: url("https://sites.google.com/site/proyectoharleyquinn/_/rsrc/1426039912103/harley-quinn-en-los-videojuegos/dsafsdfsdsdgsfd.jpg");
 
+          }
     #All{
         padding-bottom:10px;
         }

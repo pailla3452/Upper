@@ -1,6 +1,8 @@
 <!-- src/components/App.vue -->
 <template>
-
+  <style>
+    #poor{margin-top:200px;}
+  </style>
   <div id="navbar">
     <!--NAVBAR-->
 
@@ -57,8 +59,12 @@
     <div class="container">
       <router-view></router-view>
     </div>
+<!-- Prueba -->
+
+
+
 <!-- El davbar inferior -->
-<div class="ui inverted vertical footer segment">
+<div class="ui inverted vertical footer segment" id="poor">
   <div class="ui center aligned container">
     <div class="ui stackable inverted grid">
       <div class="three wide column">

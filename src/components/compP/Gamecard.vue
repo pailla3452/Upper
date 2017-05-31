@@ -78,7 +78,7 @@ export default{
     //for (var i = 0; i < )
   }
 }
-var games = { 'The Witcher 3: Wild Hunt': {linkImage:'http://tienda.canalocio.es/27201-201289-thickbox/the-witcher-3-wild-hunt-edicion-premium-day-1-ps4.jpg',
+var games = { 'The Witcher 3: Wild Hunt': {linkImage:'http://www.3djuegos.com/juegos/9592/the_witcher_3/fotos/ficha/the_witcher_3-2546818.jpg',
   description: 'Etiquetas: Mundo abierto, rol',
   price: '$34.99',
   comments:'Comentarios'}, 'Uncharted 4': {linkImage:'http://www.unchartedthegame.com/wp/wp-content/uploads/2015/04/UC4_PS4_JEWELCASE_STRAIGHT_ANGLE_001.png',
