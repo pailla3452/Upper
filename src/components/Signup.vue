@@ -73,9 +73,8 @@
 </template>
 
 
-//If Error JQUERY
 <script type="text/javascript">
-  $(function(){
+/*  $(function(){
     $('#pene').form({
         nombre : {
           identifier:'nombre',
@@ -114,7 +113,7 @@
           }
 
         });
-  });
+  });*/
 
 //Base de datos VUE
 import auth from '../auth'

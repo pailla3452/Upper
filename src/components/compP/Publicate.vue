@@ -26,7 +26,7 @@ export default {
   methods:{
     // TODO subir informacion a base de datos
     submit(){
-      
+
     }
   }
 }
