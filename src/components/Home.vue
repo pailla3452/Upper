@@ -2,11 +2,12 @@
 
   <style>
     body{background-image: url("https://s-media-cache-ak0.pinimg.com/originals/d1/54/2a/d1542a4a4f5761f3c61270373b5f6dae.jpg");}
+    #miqueridorober{margin-top:60px; }
   </style>
 
   <div >
      <!-- ARRAY DES JEUX ICI -->
-    <div class="ui link cards" >
+    <div class="ui link cards" id="miqueridorober" >
       <div v-for="jeu in jeux">
         <jeu-card :game="jeu"></jeu-card>
       </div>

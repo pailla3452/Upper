@@ -1,7 +1,7 @@
 
 <template>
   <style>
-    body{background-image: url("https://sites.google.com/site/proyectoharleyquinn/_/rsrc/1426039912103/harley-quinn-en-los-videojuegos/dsafsdfsdsdgsfd.jpg");
+    body{background-image: url("http://www.losreplicantes.com/images/articulos/0000/426/top.jpg");
 
           }
     #All{

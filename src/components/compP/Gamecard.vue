@@ -80,16 +80,16 @@ export default{
 }
 var games = { 'The Witcher 3: Wild Hunt': {linkImage:'http://www.3djuegos.com/juegos/9592/the_witcher_3/fotos/ficha/the_witcher_3-2546818.jpg',
   description: 'Etiquetas: Mundo abierto, rol',
-  price: '$34.99',
+  price: 'Stock',
   comments:'Comentarios'}, 'Uncharted 4': {linkImage:'http://www.unchartedthegame.com/wp/wp-content/uploads/2015/04/UC4_PS4_JEWELCASE_STRAIGHT_ANGLE_001.png',
   description: 'Etiquetas: Aventura, hardcore',
-  price: '$41.99',
+  price: 'Non-Stock',
   comments:'Mejor juego de la puta historia'}, 'The Last of us': {linkImage:'https://media.playstation.com/is/image/SCEA/the-last-of-us-remastered-two-column-01-ps4-us-28jul14?$TwoColumn_Image$',
   description: 'Etiquetas: Aventura, rol, plataformas',
-  price: '$45.99',
+  price: 'Non-Stock',
   comments:'El segundo mejor juego de la puta historia'},'Minecraft': {linkImage:'http://6images.cgames.de/images/idgwpgsgp/bdb/2359472/600x.jpg',
   description: 'Etiquetas: Mundo abierto, rol',
-  price: '$34.99',
+  price: 'Non-Stock',
   comments:'Juego para ninos rata'}
 }
 
